@@ -22,7 +22,7 @@ function AnnotatedImage() {
         //   setAnnotation((annotation) => [...annotation, pos]);
         // }}
       >
-        <CustomizedAnnotation x={48} y={30} title={'Neck'} />
+        <CustomizedAnnotation x={48} y={46} title={'Neck'} />
         {/*<CustomizedAnnotation x={pos.x} y={pos.y} title={'Rib'} />*/}
         {/*{annotation.map((annotation) => (*/}
         {/*  <CustomizedAnnotation x={annotation.x} y={annotation.y} title={'ss'} />*/}
