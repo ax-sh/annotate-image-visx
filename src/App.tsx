@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import './App.css';
 import { ImageWithOverlayLayers } from './Image-with-overlay-layers.tsx';
+import { PostLayout } from './Post-layout.tsx';
 import { CustomizedAnnotation } from './customized-annotation.tsx';
 import { useMousePositionOverSVG } from './use-mouse-position-over-svg.tsx';
 
@@ -32,15 +33,13 @@ function AnnotatedImage() {
     </ImageWithOverlayLayers>
   );
 }
+
 function App() {
   return (
     <main className={'container mx-auto'}>
-      <section className={'h-screen flex flex-col'}>
-        <div className={'flex-grow h-full bg-red-500 overflow-hidden h-full p-6 box-border'}>
-          <AnnotatedImage />
-        </div>
-        <section className={'flex-grow'}></section>
-      </section>
+      <div>
+        <PostLayout image={<AnnotatedImage />} />
+      </div>
     </main>
   );
 }
