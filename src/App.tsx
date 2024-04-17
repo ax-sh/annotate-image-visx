@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { CustomizedAnnotation } from './CustomizedAnnotation.tsx';
+import { ImageWithOverlayLayers } from './Image-with-overlay-layers.tsx';
 
-function App() {
-  const [count, setCount] = useState(0)
+export const greens = ['#ecf4f3', '#68b0ab', '#006a71'];
 
+function AnnotatedImage() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ImageWithOverlayLayers src={'./nino-liverani-CKxD_Qh6ULY-unsplash.jpg'} alt={'image'}>
+      <svg
+        viewBox='0 0 100 100'
+        // preserveAspectRatio='none'
+        className={'w-full h-full fill-transparent stroke-white'}
+      >
+        <CustomizedAnnotation x={48} y={30} title={'Neck'} />
+        {/*<CustomizedAnnotation x={48} y={40} title={'Rib'} />*/}
+        {/*<CustomizedAnnotation x={48} y={53} title={'Spine'} />*/}
+      </svg>
+    </ImageWithOverlayLayers>
+  );
+}
+function App() {
+  return (
+    <main className={'container mx-auto'}>
+      <section className={'h-screen flex flex-col'}>
+        <div className={'flex-grow h-full bg-red-500 overflow-hidden h-full p-6 box-border'}>
+          <AnnotatedImage />
+        </div>
+        <section className={'flex-grow'}></section>
+      </section>
+    </main>
+  );
 }
 
-export default App
+export default App;
