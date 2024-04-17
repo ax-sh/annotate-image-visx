@@ -8,7 +8,14 @@ export function CustomizedAnnotation({ x, y, title }: { x: number; y: number; ti
     connector: 'black',
     hotspot: 'red'
   });
-  const editProp = { strokeWidth: 0.5, r: 5, width: 1, height: 1 };
+  const editProp = {
+    strokeWidth: 0.5,
+    r: 5,
+    width: 1,
+    height: 1,
+    strokeDasharray: 1,
+    className: 'path'
+  };
   return (
     <EditableAnnotation
       x={x}
@@ -51,7 +58,7 @@ export function CustomizedAnnotation({ x, y, title }: { x: number; y: number; ti
         height={1}
         radius={3}
         strokeWidth={1}
-        className='animate-pulse stroke-blue-300'
+        className='animate-pulse stroke-blue-300 stroke-dasharray-1'
       />
     </EditableAnnotation>
   );
