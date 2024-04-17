@@ -40,7 +40,8 @@ export function CustomizedAnnotation({ x, y, title }: { x: number; y: number; ti
           stroke: greens[1],
           strokeWidth: 0,
           // height: 2,
-          textAnchor: 'middle'
+          textAnchor: 'middle',
+          alignmentBaseline: 'middle'
         }}
         // fontColor={greens[2]}
 
@@ -49,7 +50,13 @@ export function CustomizedAnnotation({ x, y, title }: { x: number; y: number; ti
         title={title}
         titleFontSize={4}
         backgroundPadding={0}
-        titleProps={{ strokeWidth: 0 }}
+        titleProps={{
+          strokeWidth: 0,
+          alignmentBaseline: 'middle',
+          dominantBaseline: '1',
+          textAnchor: 'middle',
+          dy: 4
+        }}
         verticalAnchor={'middle'}
         horizontalAnchor={'start'}
       />
