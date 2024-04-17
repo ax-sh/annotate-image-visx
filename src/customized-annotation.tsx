@@ -15,20 +15,28 @@ export function CustomizedAnnotation({ x, y, title }: { x: number; y: number; ti
       y={y}
       dx={40}
       dy={11}
-      height={1}
-      width={1}
+      // height={1}
+      // width={1}
       canEditSubject={true}
       // canEditLabel={false}
       subjectDragHandleProps={editProp}
       labelDragHandleProps={editProp}
+      height={1}
+      width={1}
     >
-      <Connector stroke={color.connector} type={'elbow'} pathProps={{ strokeWidth: 0.1 }} />
+      <Connector stroke={color.connector} type={'elbow'} pathProps={{ strokeWidth: 0.2 }} />
       <Label
-        showAnchorLine={true}
-        anchorLineStroke={color.hotspot}
         showBackground={true}
-        backgroundProps={{ stroke: greens[1], strokeWidth: 0.1 }}
+        showAnchorLine={false}
+        anchorLineStroke={color.hotspot}
+        backgroundProps={{
+          stroke: greens[1],
+          strokeWidth: 0,
+          // height: 2,
+          textAnchor: 'middle'
+        }}
         // fontColor={greens[2]}
+
         width={30}
         subtitleFontSize={4}
         title={title}
@@ -36,7 +44,7 @@ export function CustomizedAnnotation({ x, y, title }: { x: number; y: number; ti
         backgroundPadding={0}
         titleProps={{ strokeWidth: 0 }}
         verticalAnchor={'middle'}
-        horizontalAnchor={'middle'}
+        horizontalAnchor={'start'}
       />
       <CircleSubject
         width={1}
