@@ -1,6 +1,6 @@
 import './App.css';
-import { CustomizedAnnotation } from './CustomizedAnnotation.tsx';
 import { ImageWithOverlayLayers } from './Image-with-overlay-layers.tsx';
+import { CustomizedAnnotation } from './customized-annotation.tsx';
 
 export const greens = ['#ecf4f3', '#68b0ab', '#006a71'];
 

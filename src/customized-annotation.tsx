@@ -38,7 +38,13 @@ export function CustomizedAnnotation({ x, y, title }: { x: number; y: number; ti
         verticalAnchor={'middle'}
         horizontalAnchor={'middle'}
       />
-      <CircleSubject stroke={'red'} width={1} height={1} radius={3} strokeWidth={0.3} />
+      <CircleSubject
+        width={1}
+        height={1}
+        radius={3}
+        strokeWidth={1}
+        className='animate-pulse stroke-blue-300'
+      />
     </EditableAnnotation>
   );
 }
