@@ -33,14 +33,14 @@ export function CustomizedAnnotation({ x, y, title }: { x: number; y: number; ti
     >
       <Connector stroke={color.connector} type={'elbow'} pathProps={{ strokeWidth: 0.2 }} />
       <Label
-        showBackground={true}
+        showBackground={false}
         showAnchorLine={false}
         anchorLineStroke={color.hotspot}
         backgroundProps={{
           stroke: greens[1],
           strokeWidth: 0,
           // height: 2,
-          textAnchor: 'middle',
+          textAnchor: 'start',
           alignmentBaseline: 'middle'
         }}
         // fontColor={greens[2]}
@@ -52,8 +52,8 @@ export function CustomizedAnnotation({ x, y, title }: { x: number; y: number; ti
         backgroundPadding={0}
         titleProps={{
           strokeWidth: 0,
-          alignmentBaseline: 'middle',
-          dominantBaseline: '1',
+          alignmentBaseline: 'baseline',
+          dominantBaseline: 'central',
           textAnchor: 'middle',
           dy: 4
         }}
